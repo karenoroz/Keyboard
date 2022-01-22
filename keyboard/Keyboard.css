@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Inter:wght@100;200;300&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Unica+One&display=swap');
+
+html{
+    background-image: url("images/sky.png");
+    background-size: cover;
+}
+
+
+body{
+    width: 100vw;
+    height: 100%;
+    background-image: url("/keyboard/images/AngryFastHammerheadshark-max-1mb.gif");
+    background-size: 100%;
+    padding: 0;
+    margin: 0;
+
+}
+
+
+.contenedor{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    z-index: 0.3;
+ }
+
+ /*instructions*/
+.Features{
+    visibility: hidden; 
+    background-color: rgba(237, 229, 229, 0.585);
+    width: fit-content;
+    height: fit-content;
+    padding: 15px;
+    border-radius: 13px;
+    margin-left: 0;
+}
+
+.textInputyBotones{
+    width: 50%;
+}
+
+.imagenMoolang{
+    width: 20%;
+}
+
+.moolang{
+    background: url("keyboard/images/4353ae597c0231e7d92a7b8947be47a5.gif");
+    width:100%;
+    height: 100%;
+    animation-duration: 6s;
+    animation-name: slidein;
+}
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+    
+    }
+  
+    to {
+      margin-left: 0%;
+     
+    }
+  }
+
+
+  
+
+
+/*transform: translate(350px,0)*/
+
+.botones{
+    margin-top: 25%;
+    margin-right: 20%;
+    margin-left: 28%;
+    display: flex;
+}
+
+.buttonSave{
+    margin-right: 10px;
+}
+
+h1{
+    font-family: 'Dongle', sans-serif;
+    font-size: 60px;
+    text-align: center;
+    color: rgb(234, 180, 234);
+    text-shadow: rgb(70, 65, 65) 2px 2px 2px ;
+}
+
+h3{
+    font-family: 'Unica One', cursive;
+    font-size: 20px;
+    margin-right: 0;
+}
+li{
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+}
+
+.use-keyboard-input{
+    border-radius: 20px;
+    padding: 10px;
+    border: rgb(58, 54, 54) solid 1px;
+    margin-top: 2.5%;
+    margin-left: 0;
+    width: 10px;
+    position: absolute;
+     top: 130px; 
+     right: 10%; 
+     left: 38%; 
+     width: 300px; 
+     height: 100px;
+
+}
+
+/* ==================================================================BOTONES=========================================================================   */
+
+
+.botoncito{
+  align-items: center;
+  background-color: #fee6e3;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,sans-serif;
+  font-size: 14px;
+  height: 35px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+
+}
+
+.botoncito:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 38px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.botoncito:hover:after {
+  transform: translate(0, 0);
+}
+
+.botoncito:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+.botoncito:hover {
+  outline: 0;
+  
+  background-color: #f3b4aa;
+}
+
+@media (min-width: 768px) {
+  .button-botoncito {
+    padding: 0 40px;
+  }
+}
+
+
+
+ul{
+    margin-top: 2%;
+}
+
+
+
+.keyboard {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0;
+    background: rgba(148, 114, 114, 0.434); 
+    background-blend-mode: lighten;
+    background-image: url("images/pexels-moose-photos-1037994.jpg") ;
+    background-position-y: 7%;
+    background-size: 80%;
+    box-shadow: 0 0 50px rgba(104, 76, 76, 0.5);
+    user-select: none;
+    transition: bottom 0.4s;
+}
+
+.keyboard--hidden {
+    bottom: -100%;
+}
+
+.keyboard__keys {
+    text-align: center;
+}
+
+.keyboard__key {
+    height: 45px;
+    width: 6%;
+    max-width: 90px;
+    margin: 3px;
+    border-radius: 4px;
+    border: none;
+    background: rgba(182, 122, 122, 0.852);   
+    color: #ffffff;
+    font-size: 1.05rem;
+    outline: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+}.keyboard__key:last-child{
+    background: rgba(165, 146, 146, 0.852);
+}
+.keyboard__key:active {
+    background: rgba(183, 109, 109, 0.852);
+}
+
+.keyboard__key--wide {
+    width: 12%;
+}
+
+.keyboard__key--extra-wide {
+    width: 36%;
+    max-width: 500px;
+}
+
+.keyboard__key--activatable::after {
+    content: '';
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+}
+
+.keyboard__key--active::after {
+    background: #08ff00;
+}
+
+.keyboard__key--dark {
+    background: rgba(171, 31, 31, 0.619);
+}
+
+
+@media screen and (max-width:700px){
+  
+
+
+  .imagenMoolang{
+      width: 20%;
+      height: 20%;
+     margin-right: 0;
+     display: none;
+  }
+
+ 
+ .moolang{
+    background: url("keyboard/images/4353ae597c0231e7d92a7b8947be47a5.gif");
+    width:100%;
+    height: 100%;
+    animation-duration: 6s;
+    animation-name: slidein;
+    display: none;
+}
+
+
+#input_textarea{
+    width: 20%;
+    margin-right: 50%;
+    margin-top: 0;
+}
+
+.textInputyBotones{
+    margin-right: 45%;
+    margin-top: 8%;
+}
+
+
+.contenedor{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+
+ }
+
+ body{
+    width: 100%;
+    height: 100%;
+    background-image: url("/keyboard/images/AngryFastHammerheadshark-max-1mb.gif");
+    background-size: 140%;
+    background-repeat: no-repeat;
+
+}
+
+}
+

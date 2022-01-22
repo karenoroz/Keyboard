@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Virtual Keyboard w/ HTML, CSS & JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+<!--=======================================FAVICON==================================================-->
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+<!--==============================================================================================-->
+
+    <link rel="stylesheet" href="keyboard/Keyboard.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<!--================================AUDIO=========================================================-->
+    <audio style="display: none;" loop="loop" preload="auto" controls="" autoplay>
+        <source src="keyboard/sound/yt1s (mp3cut.net).ogg" type="audio/ogg">
+        Tu navegador no soporta el elemento "audio".
+    </audio>
+<!--==============================================================================================-->
+</head>
+
+<body>
+    <h1>Virtual Keyboard with HTML, CSS & JS</h1>
+
+    <div class="contenedor">
+
+        <div class="Features">
+            <h3>Instructions</h3>
+            <ul>
+                <li>Write something using the keyboard</li>
+                <li>Click on "Save" to download a .txt file</li>
+                <li>Click on "Clean" to delete</li>
+            </ul>
+        </div>
+
+        <div class="textInputyBotones">
+            <textarea id="input_textarea" placeholder="Write something..." class="use-keyboard-input"></textarea>
+
+            <div class="botones">
+                <div class="buttonSave">
+                    <button class="botoncito" id="botonGuardar" onclick="guardar_notas_txt();">Save</button>
+                </div>
+                <div class="buttonCancel">
+                    <button id="botonCancelar" class="botoncito" onclick="guardar_notas_txt();">Clean</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="imagenKawai" class="imagenMoolang">
+            <img class="moolang" src="keyboard/images/4353ae597c0231e7d92a7b8947be47a5.gif">
+        </div>
+
+    </div>
+
+
+
+    <script>
+        function guardar_notas_txt() {
+            let boton = document.getElementById("botonCancelar");
+
+            var textToWrite = input_textarea.value.replace(/\n/g, "\r\n");
+            var textFileAsBlob = new Blob([textToWrite], {
+                type: 'text/plain'
+            });
+            var file_name = "Virtual Keyboard by Karen Oroz Note";
+            var fileNameToSaveAs = file_name + ".txt";
+            var downloadLink = document.createElement("a");
+            downloadLink.download = fileNameToSaveAs;
+            downloadLink.innerHTML = "My Hidden Link";
+            window.URL = window.URL || window.webkitURL;
+            downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+            boton.onclick = destroyNoteElement;
+            downloadLink.style.display = "none";
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+        }
+
+        //FUNCION BORRAR LO DEL TEXT AREA//
+        function destroyNoteElement(event) {
+            input_textarea.value = "";
+        }
+
+
+        $(window).load(function () {
+            document.getElementById('imagenKawai').style.display = 'block';
+        })
+    </script>
+
+
+    <script src="keyboard/Keyboard.js"></script>
+
+
+    <!--==================================================== CREDITOS============================================================================================================-->
+    <!--Foto de Moose Photos en Pexels-->
+</body>
